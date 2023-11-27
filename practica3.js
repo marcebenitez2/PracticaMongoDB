@@ -333,22 +333,3 @@ db.usuarios.aggregate([
 
 db.usuarios.updateMany({}, { $set: { edad: 30 } });
 
-// 14 - Mostrar nombre, twitter y edad de los usuarios, ordenados por edad:
-
-db.usuarios.aggregate([
-    {
-        $sort: {
-            edad: 1
-        }
-    },
-    {
-        $project: {
-            _id: 0,
-            nombre: 1,
-            twitter: 1,
-            edad: 1
-        }
-    }
-]);
-
-
